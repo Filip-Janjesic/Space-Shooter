@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2r6vpbyw1rdc"]
+
+[ext_resource type="Texture2D" uid="uid://bs7vlwhyuoa60" path="res://assets/graphics/background/darkPurple.png" id="1_dyaho"]
+[ext_resource type="PackedScene" uid="uid://cdwacficdtkje" path="res://assets/scenes/player.tscn" id="1_ye1mc"]
+[ext_resource type="PackedScene" uid="uid://bikn3u50yjyuw" path="res://assets/scenes/meteor.tscn" id="2_ckblc"]
+
+[node name="Level" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576.49994, 324.99997)
+scale = Vector2(4.503906, 2.5390623)
+texture = ExtResource("1_dyaho")
+
+[node name="Player" parent="." instance=ExtResource("1_ye1mc")]
+position = Vector2(568, 319)
+
+[node name="Meteor" parent="." instance=ExtResource("2_ckblc")]
+position = Vector2(532, 177)
+scale = Vector2(4.503906, 2.5390623)
