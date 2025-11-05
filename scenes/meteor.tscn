@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bikn3u50yjyuw"]
+[gd_scene load_steps=3 format=3 uid="uid://bikn3u50yjyuw"]
 
-[ext_resource type="Texture2D" uid="uid://bnk5pqwwsc4gt" path="res://assets/graphics/Meteors/meteorBrown_big1.png" id="1_4vyrb"]
 [ext_resource type="Script" uid="uid://nkope4p7wnej" path="res://scenes/meteor.gd" id="1_pxso2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcwo0"]
-radius = 9.0
+radius = 27.166155
 
 [node name="Meteor" type="Area2D"]
 script = ExtResource("1_pxso2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.4305115e-06, -4.7683716e-07)
-scale = Vector2(0.19554456, 0.24404761)
-texture = ExtResource("1_4vyrb")
+[node name="Sprite2D" type="Polygon2D" parent="."]
+position = Vector2(9.536743e-07, 0.5)
+scale = Vector2(0.6966292, 0.5)
+polygon = PackedVector2Array(0.9000015, -42.12895, -11.483871, -39, -44.5, -25, -44.5, 19, -30.5, 35.699997, -30.5, 37.699997, -11.400002, 41, 26.699997, 41, 44.5, 8.5, 44.5, -9, 31.5, -30.6, 31.5, -32.5)
+uv = PackedVector2Array(45.4, 0, 27.8, 0, 0.4, 17, 0, 60, 14, 76.7, 14, 78.7, 33.1, 82, 71.2, 82, 89, 49.5, 89, 32, 76, 10.4, 76, 8.5)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tcwo0")

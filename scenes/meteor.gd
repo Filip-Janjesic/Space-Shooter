@@ -7,6 +7,10 @@ var direction_x: float
 func _ready():
 	var rng := RandomNumberGenerator.new()
 	
+	# texture
+	var path: String = "res://assets/graphics/Meteors/" + str(rng.randi_range(1, 6)) + ".png"
+	$Sprite2D.texture = load(path)
+	
 	# start position
 	var width = get_viewport().get_visible_rect().size.x
 	var random_x = rng.randi_range(0, int(width))
@@ -15,10 +19,12 @@ func _ready():
 	
 	# speed / rotation / direction
 	speed = rng.randi_range(200, 500)
-	direction_x = rng.randf_rang()
+	direction_x = rng.randf_range(-1, 1)
+	rotation_speed = rng.randi_range(40, 100)
 	
 func _process(delta):
-	position += Vector2(0, 1.0) * speed * delta
+	position += Vector2(direction_x, 1.0) * speed * delta
+	rotation_degrees += rotation_speed * delta
 	
 func _on_body_entered(body):
 	print("body entered")
